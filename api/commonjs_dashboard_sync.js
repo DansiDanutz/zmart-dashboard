@@ -1,7 +1,8 @@
-// api/dashboard-sync.js - Extremely simplified version
-// This is a minimal version that just returns a basic script to test if the endpoint works
+// api/dashboard-sync.js - CommonJS compatible version
+// This file is designed to work with Vercel's ESM to CommonJS compilation
 
-export default function handler(req, res) {
+// Use CommonJS module.exports instead of ES export default
+module.exports = function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
@@ -42,4 +43,4 @@ export default function handler(req, res) {
   
   // Send the client script
   res.status(200).send(clientScript);
-}
+};
