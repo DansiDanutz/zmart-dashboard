@@ -1,7 +1,7 @@
 {
   "name": "zmart-sync-server",
   "version": "1.0.0",
-  "description": "Synchronization server for Zmart Trading Bot dashboard",
+  "description": "Synchronization server for Zmart Trading Bot dashboard with improved Airtable authentication",
   "main": "index.js",
   "scripts": {
     "start": "vercel dev",

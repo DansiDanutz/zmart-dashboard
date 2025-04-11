@@ -6,7 +6,28 @@
       "maxDuration": 10
     }
   },
-  
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/status",
+      "dest": "/api/status"
+    },
+    {
+      "src": "/prices",
+      "dest": "/api/prices"
+    },
+    {
+      "src": "/update",
+      "dest": "/api/update"
+    },
+    {
+      "src": "/dashboard-sync.js",
+      "dest": "/api/dashboard-sync.js"
+    }
+  ],
   "headers": [
     {
       "source": "/api/dashboard-sync.js",
@@ -18,6 +39,23 @@
         {
           "key": "Cache-Control",
           "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
         }
       ]
     }
